@@ -3,8 +3,8 @@
 import sys
 from stats import *
 
-#sort_num_char
 def main():
+    print(sys.argv)
     path = sys.argv[1]
     sorted_list_of_num_char = sort_num_char(get_num_char(get_book_text(path)))
 
@@ -16,7 +16,9 @@ def main():
 
     for element in sorted_list_of_num_char:
         if element["char"].isalpha():
-            print(f"{element["char"]}: {element["num"]}")
+            char = element["char"]
+            num = element["num"]
+            print(f"{char}: {num}")
 
     print("============= END ===============")
 

@@ -1,7 +1,6 @@
 import sys
 from stats import *
 
-#sort_num_char
 def main():
     path = sys.argv[1]
     sorted_list_of_num_char = sort_num_char(get_num_char(get_book_text(path)))
