@@ -1,8 +1,9 @@
+import sys
 from stats import *
 
 #sort_num_char
 def main():
-    path = "books/frankenstein.txt"
+    path = sys.argv[1]
     sorted_list_of_num_char = sort_num_char(get_num_char(get_book_text(path)))
 
     print("============ BOOKBOT ============")
@@ -19,4 +20,7 @@ def main():
 
     return
 
-main()
+if len(sys.argv) == 2:
+    main()
+else:
+    sys.exit(1)
