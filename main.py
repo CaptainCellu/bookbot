@@ -1,11 +1,22 @@
 from stats import *
 
+#sort_num_char
 def main():
-    print(f"{get_num_words(get_book_text("books/frankenstein.txt"))} words found in the document")
+    path = "books/frankenstein.txt"
+    sorted_list_of_num_char = sort_num_char(get_num_char(get_book_text(path)))
 
-    num_char_dict = get_num_char(get_book_text("books/frankenstein.txt"))
-    print(f"Number of occurrences of each character: \n{num_char_dict}")
-    
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {get_num_words(get_book_text(path))} total words")
+    print("--------- Character Count -------")
+
+    for element in sorted_list_of_num_char:
+        if element["char"].isalpha():
+            print(f"{element["char"]}: {element["num"]}")
+
+    print("============= END ===============")
+
     return
 
 main()

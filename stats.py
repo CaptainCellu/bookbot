@@ -103,5 +103,20 @@ def get_num_char(text):
     return sorted_num_char_dict
 
 
+# to sort a list of dictionaries a need a function that takes the element of the list (a dictionary)
+# and returns the dictionary value I want to use for the .sort() method.
+def sort_on(dict):
+    return dict["num"]
+# I can than use this function in the key= argument for the .sort() method.
+
+def sort_num_char(dictionary):
+    list_of_dict = []
+    for key in dictionary:
+        temp_dict = {"char": key, "num": dictionary[key]}
+        list_of_dict.append(temp_dict)
+    list_of_dict.sort(reverse=True, key=sort_on)
+    return list_of_dict
+
 #print(get_num_char(get_book_text("books/frankenstein.txt")))
 #get_num_char("alLorA")
+#sort_num_char(get_num_char(get_book_text("books/frankenstein.txt")))
